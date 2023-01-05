@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <AssemblyName>RemoteLearning.VendingMachine</AssemblyName>
+        <RootNamespace>RemoteLearning.VendingMachine</RootNamespace>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <Company>Nagarro</Company>
+        <Authors>Remote Learning</Authors>
+        <Product>Vending Machine</Product>
+        <Description>This is an exercise used in the Remote Learning program from Nagarro.</Description>
+        <Copyright>Copyright © Nagarro 2017-2020</Copyright>
+    </PropertyGroup>
+
+</Project>
