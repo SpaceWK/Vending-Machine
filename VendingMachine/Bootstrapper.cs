@@ -19,6 +19,7 @@ namespace RemoteLearning.VendingMachine
             MainView mainView = new MainView();
             LoginView loginView = new LoginView();
             ShelfView shelfView = new ShelfView();
+            BuyView buyView = new BuyView();
 
             AuthenticationService authenticationService = new AuthenticationService();
             ProductRepository products = new ProductRepository();
@@ -28,6 +29,7 @@ namespace RemoteLearning.VendingMachine
                 new LoginUseCase(authenticationService, loginView),
                 new LogoutUseCase(authenticationService),
                 new LookUseCase(products, shelfView),
+                new BuyUseCase(authenticationService, products, buyView),
             };
 
             return new VendingMachineApplication(useCases, mainView);

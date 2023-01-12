@@ -31,5 +31,17 @@ namespace RemoteLearning.VendingMachine.DataAccess
         {
             return Products.ToList();
         }
+
+        public Product GetByColumnId(int columnId)
+        {
+            foreach (Product product in GetAllProducts())
+            {
+                if (columnId == product.ColumnId)
+                {
+                    return product;
+                }
+            }
+            return null;
+        }
     }
 }
