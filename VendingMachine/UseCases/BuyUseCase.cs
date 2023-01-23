@@ -9,9 +9,9 @@ namespace RemoteLearning.VendingMachine.UseCases
 {
     internal class BuyUseCase : IUseCase
     {
-        private readonly BuyView buyView;
-        private readonly ProductRepository productRepository;
-        private readonly AuthenticationService authenticationService;
+        private readonly IBuyView buyView;
+        private readonly IProductRepository productRepository;
+        private readonly IAuthenticationService authenticationService;
 
         public string Name => "buy";
 
@@ -19,7 +19,7 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public bool CanExecute => !authenticationService.IsUserAuthenticated;
 
-        public BuyUseCase(AuthenticationService authenticationService, ProductRepository productRepository, BuyView buyView)
+        public BuyUseCase(IAuthenticationService authenticationService, IProductRepository productRepository, IBuyView buyView)
         {
             this.buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
             this.productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));

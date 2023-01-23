@@ -9,7 +9,7 @@ namespace RemoteLearning.VendingMachine.UseCases
     internal class LookUseCase : IUseCase
     {
         private readonly ShelfView shelfView;
-        private readonly ProductRepository products;
+        private readonly IProductRepository products;
 
         public string Name => "look";
 
@@ -17,7 +17,7 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public bool CanExecute => true;
 
-        public LookUseCase(ProductRepository products, ShelfView shelfView)
+        public LookUseCase(IProductRepository products, ShelfView shelfView)
         {
             this.shelfView = shelfView ?? throw new ArgumentNullException(nameof(shelfView));
             this.products = products ?? throw new ArgumentNullException(nameof(products));

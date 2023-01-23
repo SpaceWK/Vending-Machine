@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace RemoteLearning.VendingMachine.DataAccess
 {
-    internal class ProductRepository
+    internal class ProductRepository : IProductRepository
     {
         private static readonly ICollection<Product> Products = new List<Product>() {
             new Product {

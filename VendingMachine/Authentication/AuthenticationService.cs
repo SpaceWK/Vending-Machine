@@ -1,6 +1,6 @@
 ﻿namespace RemoteLearning.VendingMachine.Authentication
 {
-    internal class AuthenticationService
+    internal class AuthenticationService : IAuthenticationService
     {
         public bool IsUserAuthenticated { get; private set; }
 

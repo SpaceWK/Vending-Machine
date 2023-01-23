@@ -19,10 +19,10 @@ namespace RemoteLearning.VendingMachine
             MainView mainView = new MainView();
             LoginView loginView = new LoginView();
             ShelfView shelfView = new ShelfView();
-            BuyView buyView = new BuyView();
+            IBuyView buyView = new BuyView();
 
-            AuthenticationService authenticationService = new AuthenticationService();
-            ProductRepository products = new ProductRepository();
+            IAuthenticationService authenticationService = new AuthenticationService();
+            IProductRepository products = new ProductRepository();
 
             List<IUseCase> useCases = new List<IUseCase>
             {
