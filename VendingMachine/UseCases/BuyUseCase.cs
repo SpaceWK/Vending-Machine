@@ -28,22 +28,13 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public void Execute()
         {
-            string requestedId = buyView.RequestProduct();
-            int columnId = 0;
+            int requestedId = buyView.RequestProduct();
 
-            if (requestedId == "X")
-            {
-                return;
-            }else
-            {
-                columnId = int.Parse(requestedId);
-            }
-
-            Product boughtProduct = productRepository.GetByColumnId(columnId);
+            Product boughtProduct = productRepository.GetByColumnId(requestedId);
 
             if (boughtProduct == null)
             {
-                throw new InvalidProductException(columnId);
+                throw new InvalidProductException(requestedId);
             }
             if (boughtProduct.Quantity <= 0)
             {

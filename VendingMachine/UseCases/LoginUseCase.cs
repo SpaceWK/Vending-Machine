@@ -7,7 +7,7 @@ namespace RemoteLearning.VendingMachine.UseCases
     internal class LoginUseCase : IUseCase
     {
         private readonly IAuthenticationService authenticationService;
-        private readonly LoginView loginView;
+        private readonly ILoginView loginView;
 
         public string Name => "login";
 
@@ -15,7 +15,7 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public bool CanExecute => !authenticationService.IsUserAuthenticated;
 
-        public LoginUseCase(IAuthenticationService authenticationService, LoginView loginView)
+        public LoginUseCase(IAuthenticationService authenticationService, ILoginView loginView)
         {
             this.authenticationService = authenticationService ?? throw new ArgumentNullException(nameof(authenticationService));
             this.loginView = loginView ?? throw new ArgumentNullException(nameof(loginView));

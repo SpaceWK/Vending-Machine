@@ -5,35 +5,19 @@ using RemoteLearning.VendingMachine.PresentationLayer;
 using RemoteLearning.VendingMachine.UseCases;
 using Xunit;
 
-namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
+namespace VendingMachine.Tests.UseCases.LookUseCaseTests
 {
     public class ConstructorTests
     {
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<IProductRepository> productRepository;
-        private readonly Mock<IBuyView> buyView;
-
-        private readonly BuyUseCase buyUseCase;
+        private readonly Mock<IShelfView> lookView;
 
         public ConstructorTests()
         {
             authenticationService = new Mock<IAuthenticationService>();
             productRepository = new Mock<IProductRepository>();
-            buyView = new Mock<IBuyView>();
-
-            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object);
-        }
-
-        [Fact]
-        public void HavingTheNameOfTheBuyUseCase_WhenInstancieted_ReturnsTheName()
-        {
-            Assert.Equal(buyUseCase.Name, "buy");
-        }
-
-        [Fact]
-        public void HavingTheDescriptionOfTheBuyUseCase_WhenInstancieted_ReturnsTheDescription()
-        {
-            Assert.Equal(buyUseCase.Description, "Now you can buy a product");
+            lookView = new Mock<IShelfView>();
         }
 
         [Fact]
@@ -41,7 +25,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(null, productRepository.Object, buyView.Object);
+                new LookUseCase(null, productRepository.Object, lookView.Object);
             }
             );
         }
@@ -51,17 +35,17 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(authenticationService.Object, null, buyView.Object);
+                new LookUseCase(authenticationService.Object, null, lookView.Object);
             }
             );
         }
 
         [Fact]
-        public void HavingNullBuyView_WhenCallingConstructor_ThrowsException()
+        public void HavingNullShelfView_WhenCallingConstructor_ThrowsException()
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(authenticationService.Object, productRepository.Object, null);
+                new LookUseCase(authenticationService.Object, productRepository.Object, null);
             }
             );
         }

@@ -26,6 +26,7 @@ namespace RemoteLearning.VendingMachine
                 List<IUseCase> availableUseCases = GetExecutableUseCases();
 
                 IUseCase useCase = mainView.ChooseCommand(availableUseCases);
+
                 try
                 {
                     useCase.Execute();

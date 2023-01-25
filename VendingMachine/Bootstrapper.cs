@@ -17,8 +17,8 @@ namespace RemoteLearning.VendingMachine
         private static VendingMachineApplication BuildApplication()
         {
             MainView mainView = new MainView();
-            LoginView loginView = new LoginView();
-            ShelfView shelfView = new ShelfView();
+            ILoginView loginView = new LoginView();
+            IShelfView shelfView = new ShelfView();
             IBuyView buyView = new BuyView();
 
             IAuthenticationService authenticationService = new AuthenticationService();
@@ -28,7 +28,7 @@ namespace RemoteLearning.VendingMachine
             {
                 new LoginUseCase(authenticationService, loginView),
                 new LogoutUseCase(authenticationService),
-                new LookUseCase(products, shelfView),
+                new LookUseCase(authenticationService, products, shelfView),
                 new BuyUseCase(authenticationService, products, buyView),
             };
 

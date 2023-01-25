@@ -25,4 +25,10 @@
     <ProjectReference Include="..\VendingMachine\VendingMachine.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="UseCases\LoginUseCaseTests\" />
+    <Folder Include="UseCases\LookUseCaseTests\" />
+    <Folder Include="UseCases\LogoutUseCaseTests\" />
+  </ItemGroup>
+
 </Project>

@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace RemoteLearning.VendingMachine.PresentationLayer
 {
-    internal class ShelfView : DisplayBase
+    internal class ShelfView : DisplayBase, IShelfView
     {
         public void DisplayProducts(IEnumerable<Product> products)
         {

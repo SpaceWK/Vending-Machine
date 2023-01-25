@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using RemoteLearning.VendingMachine.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
 using RemoteLearning.VendingMachine.Models;
 using RemoteLearning.VendingMachine.PresentationLayer;
@@ -8,19 +9,21 @@ namespace RemoteLearning.VendingMachine.UseCases
 {
     internal class LookUseCase : IUseCase
     {
-        private readonly ShelfView shelfView;
+        private readonly IShelfView shelfView;
         private readonly IProductRepository products;
+        private readonly IAuthenticationService authenticationService;
 
         public string Name => "look";
 
         public string Description => "Now you can see the shelf";
 
-        public bool CanExecute => true;
+        public bool CanExecute => !authenticationService.IsUserAuthenticated;
 
-        public LookUseCase(IProductRepository products, ShelfView shelfView)
+        public LookUseCase(IAuthenticationService authenticationService, IProductRepository products, IShelfView shelfView)
         {
             this.shelfView = shelfView ?? throw new ArgumentNullException(nameof(shelfView));
             this.products = products ?? throw new ArgumentNullException(nameof(products));
+            this.authenticationService = authenticationService ?? throw new ArgumentNullException(nameof(authenticationService));
         }
 
         public void Execute()

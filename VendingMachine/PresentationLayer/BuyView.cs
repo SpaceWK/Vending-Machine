@@ -1,14 +1,21 @@
-﻿using System;
+﻿using RemoteLearning.VendingMachine.Exceptions;
+using System;
 
 namespace RemoteLearning.VendingMachine.PresentationLayer
 {
     internal class BuyView : DisplayBase, IBuyView
     {
-        public string RequestProduct()
+        public int RequestProduct()
         {
             Console.WriteLine();
             Display("Insert a product id or X (for cancel): ", ConsoleColor.Cyan);
-            return Console.ReadLine();
+            string requestedId = Console.ReadLine();
+
+            if (requestedId == "X")
+            {
+                throw new CancelException();
+            }
+            return int.Parse(requestedId);
         }
 
         public void DispenseProduct(string productName)

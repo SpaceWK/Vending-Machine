@@ -2,7 +2,7 @@
 {
     internal interface IBuyView
     {
-        public string RequestProduct();
+        public int RequestProduct();
         public void DispenseProduct(string productName);
     }
 }
