@@ -14,7 +14,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<IProductRepository> productRepository;
         private readonly Mock<IBuyView> buyView;
-
+        
         private readonly BuyUseCase buyUseCase;
 
         public ExecuteTests()
@@ -27,7 +27,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         }
 
         [Fact]
-        public void HavingABuyUseCaseInstance_WhenExecuted_ThenRequestAProduct()
+        public void HavingABuyUseViewInstance_WhenExecuted_ThenRequestAProduct()
         {
             buyView
                 .Setup(x => x.RequestProduct())
@@ -103,25 +103,23 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
             );
         }
 
-        //[Fact]
-        //public void HavingABuyUseCaseInstance_WhenExecuted_ReturnsProductWithIntroducedId()
-        //{
-        //    buyView
-        //        .Setup(x => x.RequestProduct())
-        //        .Returns(3);
+        [Fact]
+        public void HavingABuyUseCaseInstance_WhenExecuted_DecrementTheQuantityOfTheSelectedProduct()
+        {
+            Product product = new Product() { Quantity = 5 };
 
-        //    productRepository
-        //        .Setup(x => x.GetByColumnId(It.IsAny<int>()))
-        //        .Returns(new Product
-        //        {
-        //            Quantity = 1
-        //        });
+            buyView
+                .Setup(x => x.RequestProduct())
+                .Returns(3);
 
-        //    buyUseCase.Execute();
-        //    buyUseCase.de
-            
-        //    Assert.(x => x.(3), Times.Once);
-        //}
+            productRepository
+                .Setup(x => x.GetByColumnId(It.IsAny<int>()))
+                .Returns(product);
+
+            buyUseCase.Execute();
+
+            Assert.Equal(4, product.Quantity);
+        }
 
         [Fact]
         public void HavingABuyViewInstance_WhenExecuted_DispenseTheProduct()

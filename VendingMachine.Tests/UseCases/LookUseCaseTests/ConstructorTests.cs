@@ -13,11 +13,27 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
         private readonly Mock<IProductRepository> productRepository;
         private readonly Mock<IShelfView> lookView;
 
+        private readonly LookUseCase lookUseCase;
+
         public ConstructorTests()
         {
             authenticationService = new Mock<IAuthenticationService>();
             productRepository = new Mock<IProductRepository>();
             lookView = new Mock<IShelfView>();
+
+            lookUseCase = new LookUseCase(authenticationService.Object, productRepository.Object, lookView.Object);
+        }
+
+        [Fact]
+        public void WhenInitializingTheUseCase_NameIsSet()
+        {
+            Assert.Equal("look", lookUseCase.Name);
+        }
+
+        [Fact]
+        public void WhenInitializingTheUseCase_DescriptionIsSet()
+        {
+            Assert.Equal("Now you can see the shelf.", lookUseCase.Description);
         }
 
         [Fact]

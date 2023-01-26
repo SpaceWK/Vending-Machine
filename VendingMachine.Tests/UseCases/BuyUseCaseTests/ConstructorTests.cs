@@ -25,15 +25,15 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         }
 
         [Fact]
-        public void HavingTheNameOfTheBuyUseCase_WhenInstancieted_ReturnsTheName()
+        public void WhenInitializingTheUseCase_NameIsSet()
         {
-            Assert.Equal(buyUseCase.Name, "buy");
+            Assert.Equal("buy", buyUseCase.Name);
         }
 
         [Fact]
-        public void HavingTheDescriptionOfTheBuyUseCase_WhenInstancieted_ReturnsTheDescription()
+        public void WhenInitializingTheUseCase_DescriptionIsSet()
         {
-            Assert.Equal(buyUseCase.Description, "Now you can buy a product");
+            Assert.Equal("Now you can buy a product.", buyUseCase.Description);
         }
 
         [Fact]

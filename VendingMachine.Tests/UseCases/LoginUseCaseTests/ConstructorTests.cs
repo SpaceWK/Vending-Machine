@@ -11,10 +11,26 @@ namespace VendingMachine.Tests.UseCases.LoginUseCaseTests
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<ILoginView> loginView;
 
+        private readonly LoginUseCase loginUseCase;
+
         public ConstructorTests()
         {
             authenticationService = new Mock<IAuthenticationService>();
             loginView = new Mock<ILoginView>();
+
+            loginUseCase = new LoginUseCase(authenticationService.Object, loginView.Object);
+        }
+
+        [Fact]
+        public void WhenInitializingTheUseCase_NameIsSet()
+        {
+            Assert.Equal("login", loginUseCase.Name);
+        }
+
+        [Fact]
+        public void WhenInitializingTheUseCase_DescriptionIsSet()
+        {
+            Assert.Equal("Get access to administration section.", loginUseCase.Description);
         }
 
         [Fact]

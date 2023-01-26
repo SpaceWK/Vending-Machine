@@ -15,7 +15,7 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public string Name => "look";
 
-        public string Description => "Now you can see the shelf";
+        public string Description => "Now you can see the shelf.";
 
         public bool CanExecute => !authenticationService.IsUserAuthenticated;
 
