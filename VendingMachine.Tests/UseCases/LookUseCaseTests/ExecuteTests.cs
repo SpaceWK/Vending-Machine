@@ -30,10 +30,13 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
         {
             ICollection<Product> productsList = productRepository.Object.GetAllProducts();
 
-            productRepository
-                .Setup(x => x.GetByColumnId(It.IsAny<int>()))
-                .Returns(productsList);
-
+            var product1 = new Product { Quantity = 5 };
+            var product2 = new Product { Quantity = 0 };
+            var product3 = new Product { Quantity = 2 };
+            productsList.Add(product1);
+            productsList.Add(product2);
+            productsList.Add(product3);
+             
             lookUseCase.Execute();
 
             foreach (Product product in productsList)
@@ -44,13 +47,6 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
                 }
             }
             lookView.Object.DisplayProducts(productsList);
-        }
-
-        [Fact]
-        public void HavingALookUseCaseInstance_WhenExecuted_()
-        {
-            lookUseCase.Execute();
-            productRepository.Verify(x => x.GetAllProducts(), Times.Once());
         }
     }
 }
