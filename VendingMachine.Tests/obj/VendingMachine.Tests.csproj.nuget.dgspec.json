@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj": {}
+    "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj": {
+    "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj",
+        "projectUniqueName": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj",
         "projectName": "VendingMachine.Tests",
-        "projectPath": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj",
+        "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Tests\\VendingMachine.Tests.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine.Tests\\obj\\",
+        "outputPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\VendingMachine.csproj": {
-                "projectPath": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\VendingMachine.csproj"
+              "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj": {
+                "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj"
               }
             }
           }
@@ -95,14 +95,14 @@
         }
       }
     },
-    "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\VendingMachine.csproj": {
+    "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\VendingMachine.csproj",
+        "projectUniqueName": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj",
         "projectName": "RemoteLearning.VendingMachine",
-        "projectPath": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\VendingMachine.csproj",
+        "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj",
         "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-        "outputPath": "D:\\Nagarro\\Remote_Learning\\Vending Machine\\Vending Machine\\VendingMachine\\obj\\",
+        "outputPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",

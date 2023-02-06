@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using RemoteLearning.VendingMachine.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
+using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
 using RemoteLearning.VendingMachine.UseCases;
 
@@ -20,8 +21,12 @@ namespace RemoteLearning.VendingMachine
             ILoginView loginView = new LoginView();
             IShelfView shelfView = new ShelfView();
             IBuyView buyView = new BuyView();
+            ICardPaymentTerminal cardPaymentTerminal = new CardPaymentTerminal();
+            ICashPaymentTerminal cashPaymentTerminal = new CashPaymentTerminal();
 
             IAuthenticationService authenticationService = new AuthenticationService();
+            List<IPaymentAlgorithm> paymentAlgorithms = new() { new CashPayment(cashPaymentTerminal), new CardPayment(cardPaymentTerminal) };
+            IPaymentService paymentService = new PaymentService(buyView, paymentAlgorithms);
             IProductRepository products = new ProductRepository();
 
             List<IUseCase> useCases = new List<IUseCase>
@@ -29,7 +34,7 @@ namespace RemoteLearning.VendingMachine
                 new LoginUseCase(authenticationService, loginView),
                 new LogoutUseCase(authenticationService),
                 new LookUseCase(authenticationService, products, shelfView),
-                new BuyUseCase(authenticationService, products, buyView),
+                new BuyUseCase(authenticationService, products, buyView, paymentService),
             };
 
             return new VendingMachineApplication(useCases, mainView);

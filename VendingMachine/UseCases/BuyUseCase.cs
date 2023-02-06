@@ -2,6 +2,7 @@
 using RemoteLearning.VendingMachine.DataAccess;
 using RemoteLearning.VendingMachine.Exceptions;
 using RemoteLearning.VendingMachine.Models;
+using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
 using System;
 
@@ -12,6 +13,7 @@ namespace RemoteLearning.VendingMachine.UseCases
         private readonly IBuyView buyView;
         private readonly IProductRepository productRepository;
         private readonly IAuthenticationService authenticationService;
+        private readonly PaymentService paymentService;
 
         public string Name => "buy";
 
@@ -19,11 +21,12 @@ namespace RemoteLearning.VendingMachine.UseCases
 
         public bool CanExecute => !authenticationService.IsUserAuthenticated;
 
-        public BuyUseCase(IAuthenticationService authenticationService, IProductRepository productRepository, IBuyView buyView)
+        public BuyUseCase(IAuthenticationService authenticationService, IProductRepository productRepository, IBuyView buyView, PaymentService paymentService)
         {
             this.buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
             this.productRepository = productRepository ?? throw new ArgumentNullException(nameof(productRepository));
             this.authenticationService = authenticationService ?? throw new ArgumentNullException(nameof(authenticationService));
+            this.paymentService = paymentService ?? throw new ArgumentNullException(nameof(paymentService));
         }
 
         public void Execute()
@@ -40,7 +43,9 @@ namespace RemoteLearning.VendingMachine.UseCases
             {
                 throw new InsufficientStockException(boughtProduct.Name);
             }
-            
+
+            paymentService.Execute(boughtProduct.Price);
+
             DecrementStock(boughtProduct);
             buyView.DispenseProduct(boughtProduct.Name);
         }
