@@ -26,27 +26,54 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
         }
 
         [Fact]
-        public void HavingALookUseCaseInstance_WhenExecuted_TheProductWithNonZeroQuantityAreTakenAndDisplayed()
+        public void HavingALookUseCase_WhenExecuted_ThenAllProductsAreRetrievedFromRepository()
         {
-            ICollection<Product> productsList = productRepository.Object.GetAllProducts();
+            productRepository
+                .Setup(x => x.GetAllProducts())
+                .Returns(new List<Product>() {
+                    new Product {
+                        ColumnId = 1,
+                        Name = "Chocolate",
+                        Price = 5,
+                        Quantity = 15
+                    }
+                });
 
-            var product1 = new Product { Quantity = 5 };
-            var product2 = new Product { Quantity = 0 };
-            var product3 = new Product { Quantity = 2 };
-            productsList.Add(product1);
-            productsList.Add(product2);
-            productsList.Add(product3);
-             
             lookUseCase.Execute();
 
-            foreach (Product product in productsList)
-            {
-                if (product.Quantity == 0)
-                {
-                    productsList = productsList.Where(product => product.Quantity != 0).ToList();
-                }
-            }
-            lookView.Object.DisplayProducts(productsList);
+            productRepository.Verify(x => x.GetAllProducts(), Times.Once);
+        }
+
+        [Fact]
+        public void HavingAProductWithZeroStock_WhenExecuted_ThenNoProductIsRetrievedFromTheProductRepository()
+        {
+            Product product = new Product() { Quantity = 0 };
+            List<Product> productsList = new List<Product>() { product };
+            List<Product> expectedProductsList = new List<Product>();
+
+            productRepository
+                .Setup(x => x.GetAllProducts())
+                .Returns(productsList);
+
+            lookUseCase.Execute();
+
+            lookView.Verify(x => x.DisplayProducts(expectedProductsList), Times.Once);
+        }
+
+        [Fact]
+        public void HavingALookUseCase_WhenExecuted_ThenAllEligibleProductsAreDisplayed()
+        {
+            Product product = new Product() { Quantity = 19 };
+            List<Product> productsList = new List<Product>() { product };
+            List<Product> expectedProductsList = new List<Product>() { product };
+
+            productRepository
+                .Setup(x => x.GetAllProducts())
+                .Returns(productsList);
+
+            lookUseCase.Execute();
+
+            lookView.Verify(x => x.DisplayProducts(expectedProductsList), Times.Once);
         }
     }
 }

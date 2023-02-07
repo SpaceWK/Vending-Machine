@@ -3,6 +3,7 @@ using RemoteLearning.VendingMachine.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
 using RemoteLearning.VendingMachine.Exceptions;
 using RemoteLearning.VendingMachine.Models;
+using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
 using RemoteLearning.VendingMachine.UseCases;
 using Xunit;
@@ -14,7 +15,8 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<IProductRepository> productRepository;
         private readonly Mock<IBuyView> buyView;
-        
+        private readonly Mock<IPaymentService> paymentService;
+
         private readonly BuyUseCase buyUseCase;
 
         public ExecuteTests()
@@ -22,8 +24,9 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
             authenticationService = new Mock<IAuthenticationService>();
             productRepository = new Mock<IProductRepository>();
             buyView = new Mock<IBuyView>();
+            paymentService = new Mock<IPaymentService>();
 
-            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object);
+            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object, paymentService.Object);
         }
 
         [Fact]
@@ -101,6 +104,26 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
                 buyUseCase.Execute();
             }
             );
+        }
+
+        [Fact]
+        public void HavingAPaymentServiceInstance_WhenExecuted_ThenExecuteThePaymentMethod()
+        {
+            buyView
+                 .Setup(x => x.RequestProduct())
+                 .Returns(3);
+
+            productRepository
+                .Setup(x => x.GetByColumnId(It.IsAny<int>()))
+                .Returns(new Product
+                {
+                    Quantity = 1,
+                    Price = 20
+                });
+
+            buyUseCase.Execute();
+
+            paymentService.Verify(x => x.Execute(20), Times.Once);
         }
 
         [Fact]

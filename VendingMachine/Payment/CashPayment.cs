@@ -1,28 +1,40 @@
-﻿using RemoteLearning.VendingMachine.PresentationLayer;
+﻿using RemoteLearning.VendingMachine.Exceptions;
+using RemoteLearning.VendingMachine.PresentationLayer;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RemoteLearning.VendingMachine.Payment
 {
     internal class CashPayment : IPaymentAlgorithm
     {
-        CashPaymentTerminal cashTerminal = new CashPaymentTerminal();
+        ICashPaymentTerminal cashTerminal = new CashPaymentTerminal();
 
         public string Name => "cash";
 
-        public CashPayment(CashPaymentTerminal cashTerminal)
+        public CashPayment(ICashPaymentTerminal cashTerminal)
         {
             this.cashTerminal = cashTerminal ?? throw new ArgumentNullException(nameof(cashTerminal));
         }
 
         public void Run(float productPrice)
         {
-            float insertedMoney = cashTerminal.AskForMoney();
-            float change = insertedMoney - productPrice;
-            cashTerminal.GiveBackChange(change);
+            float totalMoneyInserted = 0.0f;
+
+            while (totalMoneyInserted < productPrice)
+            {
+                string input = cashTerminal.AskForMoney();
+
+                if (input == null)
+                {
+                    cashTerminal.GiveBackMoney(totalMoneyInserted);
+                    throw new CancelException();
+                }
+                
+                float insertedMoney = float.Parse(input);
+                totalMoneyInserted += insertedMoney;
+            }
+
+            float change = totalMoneyInserted - productPrice;
+            cashTerminal.GiveBackMoney(change);
         }
     }
 }

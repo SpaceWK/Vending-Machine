@@ -13,18 +13,3 @@ D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\De
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\RemoteLearning.VendingMachine.pdb
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.genruntimeconfig.cache
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\ref\RemoteLearning.VendingMachine.dll
-D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.exe
-D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.deps.json
-D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.runtimeconfig.json
-D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.dll
-D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.pdb
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.csproj.AssemblyReference.cache
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.GeneratedMSBuildEditorConfig.editorconfig
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.AssemblyInfoInputs.cache
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.AssemblyInfo.cs
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.csproj.CoreCompileInputs.cache
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\RemoteLearning.VendingMachine.dll
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\refint\RemoteLearning.VendingMachine.dll
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\RemoteLearning.VendingMachine.pdb
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.genruntimeconfig.cache
-D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\ref\RemoteLearning.VendingMachine.dll

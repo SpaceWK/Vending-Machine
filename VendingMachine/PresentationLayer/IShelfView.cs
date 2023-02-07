@@ -9,7 +9,7 @@ namespace RemoteLearning.VendingMachine.PresentationLayer
 {
     internal interface IShelfView
     {
-        public void DisplayProducts(IEnumerable<Product> products);
+        void DisplayProducts(IEnumerable<Product> products);
 
     }
 }

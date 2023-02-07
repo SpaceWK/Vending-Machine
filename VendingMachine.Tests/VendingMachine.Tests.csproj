@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Payment\CashPaymentTests\" />
     <Folder Include="UseCases\LoginUseCaseTests\" />
     <Folder Include="UseCases\LookUseCaseTests\" />
     <Folder Include="UseCases\LogoutUseCaseTests\" />

@@ -24,10 +24,9 @@ namespace RemoteLearning.VendingMachine
             {
                 List<IUseCase> availableUseCases = GetExecutableUseCases();
 
-                IUseCase useCase = mainView.ChooseCommand(availableUseCases);
-
                 try
                 {
+                    IUseCase useCase = mainView.ChooseCommand(availableUseCases);
                     useCase.Execute();
                 }
                 catch (InvalidProductException ex)

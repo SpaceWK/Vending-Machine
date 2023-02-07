@@ -40,7 +40,8 @@ namespace RemoteLearning.VendingMachine.Payment
         {
             int paymentMethodId = buyView.AskForPaymentMethod(paymentMethods);
 
-            if(paymentMethods.FirstOrDefault(x => x.Id == paymentMethodId) == null) {
+            if (paymentMethods.FirstOrDefault(x => x.Id == paymentMethodId) == null)
+            {
                 throw new CancelException();
             }
 

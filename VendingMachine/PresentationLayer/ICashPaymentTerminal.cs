@@ -8,7 +8,7 @@ namespace RemoteLearning.VendingMachine.PresentationLayer
 {
     internal interface ICashPaymentTerminal
     {
-        float AskForMoney();
-        void GiveBackChange(float price);
+        string AskForMoney();
+        void GiveBackMoney(float price);
     }
 }

@@ -2,6 +2,6 @@
 {
     internal interface ILoginView
     {
-        public string AskForPassword();
+        string AskForPassword();
     }
 }
