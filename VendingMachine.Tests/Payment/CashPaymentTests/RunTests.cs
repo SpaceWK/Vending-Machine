@@ -27,7 +27,7 @@ namespace VendingMachine.Tests.Payment.CashPaymentTests
             cashPaymentTerminal
                 .Setup(x => x.GiveBackMoney(It.IsAny<float>()));
 
-            cashPayment.Run(It.IsAny<float>());
+            cashPayment.Run(5);
 
             cashPaymentTerminal.Verify(x => x.AskForMoney(), Times.Once);
         }
@@ -37,11 +37,11 @@ namespace VendingMachine.Tests.Payment.CashPaymentTests
         {
             cashPaymentTerminal
                 .Setup(x => x.AskForMoney())
-                .Returns<int?>(null);
+                .Returns((string)null);
 
             Assert.Throws<CancelException>(() =>
             {
-                cashPayment.Run(It.IsAny<float>());
+                cashPayment.Run(5);
             });
         }
 
@@ -61,13 +61,14 @@ namespace VendingMachine.Tests.Payment.CashPaymentTests
         public void HavingACashPaymentCaseInstance_WhenPaymentCanceled_GiveBackMoneyAndThrowException()
         {
             cashPaymentTerminal
-                .Setup(x => x.AskForMoney())
-                .Returns<int?>(null);
+                .SetupSequence(x => x.AskForMoney())
+                .Returns("5")
+                .Returns((string)null);
 
             Assert.Throws<CancelException>(() =>
             {
-                cashPayment.Run(It.IsAny<float>());
-                cashPaymentTerminal.Verify(x => x.GiveBackMoney(It.IsAny<float>()), Times.Once);
+                cashPayment.Run(15);
+                cashPaymentTerminal.Verify(x => x.GiveBackMoney(It.IsAny<float>()), Times.Exactly(2));
             });
         }
     }

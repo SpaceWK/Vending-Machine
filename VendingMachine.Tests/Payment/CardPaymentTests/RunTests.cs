@@ -47,12 +47,12 @@ namespace VendingMachine.Tests.Payment.CardPaymentTests
         {
             cardPaymentTerminal
                 .SetupSequence(x => x.AskForCardNumber())
-                .Returns("")
-                .Returns("");
+                .Returns("2")
+                .Returns("6011111111111117");
 
             cardPayment.Run(It.IsAny<float>());
 
-            
+            cardPaymentTerminal.Verify(x => x.AskForCardNumber(), Times.Exactly(2));
         }
     }
 }

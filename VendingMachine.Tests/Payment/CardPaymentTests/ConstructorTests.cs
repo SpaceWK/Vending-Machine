@@ -1,8 +1,6 @@
 ﻿using Moq;
-using RemoteLearning.VendingMachine.DataAccess;
 using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
-using RemoteLearning.VendingMachine.UseCases;
 using Xunit;
 
 namespace VendingMachine.Tests.Payment.CardPaymentTests

@@ -3,7 +3,6 @@ using RemoteLearning.VendingMachine.Exceptions;
 using RemoteLearning.VendingMachine.Models;
 using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
-using System.Collections.Generic;
 using Xunit;
 
 namespace VendingMachine.Tests.Payment.PaymentServiceTests
@@ -19,14 +18,14 @@ namespace VendingMachine.Tests.Payment.PaymentServiceTests
         public ExecuteTests()
         {
             buyView = new Mock<IBuyView>();
-            paymentAlgorithms = new List<Mock<IPaymentAlgorithm>>() 
-            { 
-                new Mock<IPaymentAlgorithm>(), 
-                new Mock<IPaymentAlgorithm>() 
+            paymentAlgorithms = new List<Mock<IPaymentAlgorithm>>()
+            {
+                new Mock<IPaymentAlgorithm>(),
+                new Mock<IPaymentAlgorithm>()
             };
 
             List<IPaymentAlgorithm> paymentAlgorithmsObject = paymentAlgorithms.ConvertAll(x => x.Object);
-            paymentService = new PaymentService(buyView.Object, paymentAlgorithmsObject); 
+            paymentService = new PaymentService(buyView.Object, paymentAlgorithmsObject);
 
             nullPaymentAlgorithms = new List<IPaymentAlgorithm>();
             nullPaymentService = new PaymentService(buyView.Object, nullPaymentAlgorithms);
@@ -35,20 +34,20 @@ namespace VendingMachine.Tests.Payment.PaymentServiceTests
         [Fact]
         public void HavingAPaymentService_WhenExecuted_TheUserIsAskedForPaymentMethod()
         {
-            buyView
+            buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
                 .Returns(2);
-            paymentAlgorithms.ForEach(x => x.Setup(x => x.Name).Returns("card")); 
+            paymentAlgorithms.ForEach(x => x.Setup(x => x.Name).Returns("card"));
 
-            paymentService.Execute(It.IsAny<float>());             
+            paymentService.Execute(It.IsAny<float>());
 
-            buyView.Verify(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()), Times.Once);
+            buyView.Verify(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()), Times.Once);
         }
 
         [Fact]
         public void HavingAPaymentService_WhenExecutedOnANullPaymentMethod_ThanThrowsException()
         {
-            buyView
+            buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
                 .Returns<int?>(null);
 
@@ -61,9 +60,9 @@ namespace VendingMachine.Tests.Payment.PaymentServiceTests
         [Fact]
         public void HavingAPaymentService_WhenExecutedOnANullPaymentAlgorithm_ThanThrowsException()
         {
-            buyView
+            buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
-                .Returns<int?>(null); 
+                .Returns<int?>(null);
 
             Assert.Throws<CancelException>(() =>
             {
@@ -74,28 +73,28 @@ namespace VendingMachine.Tests.Payment.PaymentServiceTests
         [Fact]
         public void HavingAPaymentService_WhenExecuted_TheUserIsAskedForPaymentMethodAndReturnsTheAlgorithm()
         {
-            buyView
+            buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
                 .Returns(2);
-            paymentAlgorithms.ForEach(x => x.Setup(x => x.Name).Returns("card"));          
-            
-            paymentService.Execute(It.IsAny<float>());         
-            
-            buyView.Verify(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()), Times.Once);
+            paymentAlgorithms.ForEach(x => x.Setup(x => x.Name).Returns("card"));
+
+            paymentService.Execute(It.IsAny<float>());
+
+            buyView.Verify(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()), Times.Once);
         }
 
         [Fact]
         public void HavingAPaymentAlgorithmInstance_WhenExecuted_ThanTheAlgorithmChoosedIsRunned()
         {
-            buyView
+            buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
                 .Returns(1);
             paymentAlgorithms[0].Setup(x => x.Name).Returns("cash");
-            paymentAlgorithms[1].Setup(x => x.Name).Returns("card");             
-            
-            paymentService.Execute(It.IsAny<float>());             
-            
-            paymentAlgorithms[0].Verify(x => x.Run(It.IsAny<float>()), Times.Once());
+            paymentAlgorithms[1].Setup(x => x.Name).Returns("card");
+
+            paymentService.Execute(It.IsAny<float>());
+
+            paymentAlgorithms[0].Verify(x => x.Run(It.IsAny<float>()), Times.Once());
             paymentAlgorithms[1].Verify(x => x.Run(It.IsAny<float>()), Times.Never());
         }
     }
