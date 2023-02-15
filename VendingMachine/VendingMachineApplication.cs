@@ -1,7 +1,8 @@
-﻿using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using RemoteLearning.VendingMachine.Exceptions;
+using RemoteLearning.VendingMachine.PresentationLayer;
+using RemoteLearning.VendingMachine.UseCases;
 
 namespace RemoteLearning.VendingMachine
 {
@@ -24,9 +25,10 @@ namespace RemoteLearning.VendingMachine
             {
                 List<IUseCase> availableUseCases = GetExecutableUseCases();
 
+                IUseCase useCase = mainView.ChooseCommand(availableUseCases);
+
                 try
                 {
-                    IUseCase useCase = mainView.ChooseCommand(availableUseCases);
                     useCase.Execute();
                 }
                 catch (InvalidProductException ex)
@@ -34,10 +36,6 @@ namespace RemoteLearning.VendingMachine
                     Console.WriteLine("Error: " + ex.Message);
                 }
                 catch (InsufficientStockException ex)
-                {
-                    Console.WriteLine("Error: " + ex.Message);
-                }
-                catch (CancelException ex)
                 {
                     Console.WriteLine("Error: " + ex.Message);
                 }

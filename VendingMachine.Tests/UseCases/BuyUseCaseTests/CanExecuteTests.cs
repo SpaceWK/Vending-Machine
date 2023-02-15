@@ -1,7 +1,6 @@
 ﻿using Moq;
 using RemoteLearning.VendingMachine.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
-using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
 using RemoteLearning.VendingMachine.UseCases;
 using Xunit;
@@ -13,7 +12,6 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<IProductRepository> productRepository;
         private readonly Mock<IBuyView> buyView;
-        private readonly Mock<IPaymentService> paymentService;
 
         private readonly BuyUseCase buyUseCase;
 
@@ -22,9 +20,8 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
             authenticationService = new Mock<IAuthenticationService>();
             productRepository = new Mock<IProductRepository>();
             buyView = new Mock<IBuyView>();
-            paymentService = new Mock<IPaymentService>();
 
-            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object, paymentService.Object);
+            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object);
         }
 
         [Fact]
