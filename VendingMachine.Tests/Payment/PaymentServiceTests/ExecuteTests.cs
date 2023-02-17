@@ -62,7 +62,7 @@ namespace VendingMachine.Tests.Payment.PaymentServiceTests
         {
             buyView
                 .Setup(x => x.AskForPaymentMethod(It.IsAny<List<PaymentMethod>>()))
-                .Returns<int?>(null);
+                .Returns(1);
 
             Assert.Throws<CancelException>(() =>
             {

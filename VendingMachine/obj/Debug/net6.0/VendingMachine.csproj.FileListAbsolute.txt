@@ -13,3 +13,5 @@ D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\De
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\RemoteLearning.VendingMachine.pdb
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.genruntimeconfig.cache
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\ref\RemoteLearning.VendingMachine.dll
+D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\bin\Debug\net6.0\LiteDB.dll
+D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.csproj.CopyComplete

@@ -1,6 +1,7 @@
 ﻿using Moq;
 using RemoteLearning.VendingMachine.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
+using RemoteLearning.VendingMachine.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
 using RemoteLearning.VendingMachine.UseCases;
 using Xunit;
@@ -12,6 +13,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         private readonly Mock<IAuthenticationService> authenticationService;
         private readonly Mock<IProductRepository> productRepository;
         private readonly Mock<IBuyView> buyView;
+        private readonly Mock<IPaymentService> paymentService;
 
         private readonly BuyUseCase buyUseCase;
 
@@ -20,8 +22,9 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
             authenticationService = new Mock<IAuthenticationService>();
             productRepository = new Mock<IProductRepository>();
             buyView = new Mock<IBuyView>();
+            paymentService = new Mock<IPaymentService>();
 
-            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object);
+            buyUseCase = new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object, paymentService.Object);
         }
 
         [Fact]
@@ -41,7 +44,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(null, productRepository.Object, buyView.Object);
+                new BuyUseCase(null, productRepository.Object, buyView.Object, paymentService.Object);
             }
             );
         }
@@ -51,7 +54,7 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(authenticationService.Object, null, buyView.Object);
+                new BuyUseCase(authenticationService.Object, null, buyView.Object, paymentService.Object);
             }
             );
         }
@@ -61,7 +64,17 @@ namespace VendingMachine.Tests.UseCases.BuyUseCaseTests
         {
             Assert.Throws<ArgumentNullException>(() =>
             {
-                new BuyUseCase(authenticationService.Object, productRepository.Object, null);
+                new BuyUseCase(authenticationService.Object, productRepository.Object, null, paymentService.Object);
+            }
+            );
+        }
+
+        [Fact]
+        public void HavingNullPaymentService_WhenCallingConstructor_ThrowsException()
+        {
+            Assert.Throws<ArgumentNullException>(() =>
+            {
+                new BuyUseCase(authenticationService.Object, productRepository.Object, buyView.Object, null);
             }
             );
         }

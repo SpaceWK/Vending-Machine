@@ -27,9 +27,9 @@ namespace RemoteLearning.VendingMachine.DataAccess
             }
         };
 
-        public List<Product> GetAllProducts()
+        public IEnumerable<Product> GetAllProducts()
         {
-            return Products.ToList();
+            return Products;
         }
 
         public Product GetByColumnId(int columnId)

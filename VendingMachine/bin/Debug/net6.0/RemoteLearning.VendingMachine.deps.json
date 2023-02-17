@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v6.0": {
       "RemoteLearning.VendingMachine/1.0.0": {
+        "dependencies": {
+          "LiteDB": "5.0.15"
+        },
         "runtime": {
           "RemoteLearning.VendingMachine.dll": {}
+        }
+      },
+      "LiteDB/5.0.15": {
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.15.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "LiteDB/5.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nucyfCOGSATH553BxplxExP3BOqEwmHt0B57426EIaQjD3CC1Odb52VVCGgTxyYaD2oe3B/cJk8jDo6XiBJqPg==",
+      "path": "litedb/5.0.15",
+      "hashPath": "litedb.5.0.15.nupkg.sha512"
     }
   }
 }

@@ -5,7 +5,7 @@ namespace RemoteLearning.VendingMachine.DataAccess
 {
     internal interface IProductRepository
     {
-        List<Product> GetAllProducts();
+        IEnumerable<Product> GetAllProducts();
         Product GetByColumnId(int columnId);
     }
 }

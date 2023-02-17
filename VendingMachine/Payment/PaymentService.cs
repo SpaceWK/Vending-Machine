@@ -47,7 +47,7 @@ namespace RemoteLearning.VendingMachine.Payment
 
             PaymentMethod selectedMethod = paymentMethods.FirstOrDefault(x => x.Id == paymentMethodId);
 
-            if (paymentAlgorithms.FirstOrDefault(x => x.Name == selectedMethod.Name) == null)
+            if (paymentAlgorithms.Count() == 0)
             {
                 throw new CancelException();
             }
