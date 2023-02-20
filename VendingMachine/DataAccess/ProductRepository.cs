@@ -27,6 +27,11 @@ namespace RemoteLearning.VendingMachine.DataAccess
             }
         };
 
+        public void CreateProduct(Product product)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public IEnumerable<Product> GetAllProducts()
         {
             return Products;
@@ -42,6 +47,16 @@ namespace RemoteLearning.VendingMachine.DataAccess
                 }
             }
             return null;
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DeleteProduct(Product product)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

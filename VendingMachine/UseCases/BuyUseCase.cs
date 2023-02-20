@@ -47,6 +47,7 @@ namespace RemoteLearning.VendingMachine.UseCases
             paymentService.Execute(boughtProduct.Price);
 
             DecrementStock(boughtProduct);
+            productRepository.UpdateProduct(boughtProduct);
             buyView.DispenseProduct(boughtProduct.Name);
         }
 
