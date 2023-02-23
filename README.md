@@ -6,7 +6,11 @@ This project represents a virtual implementation of a vending machine made in co
 
 
 ## Usage
+A brief view of the app's functionality.
 
+<br>
+
+![Example Image](https://github.com/SpaceWK/Vending-Machine/blob/main/Utilities/ApplicationPreview.png)
 
 ## Roadmap
 ![Example Image](https://github.com/SpaceWK/Vending-Machine/blob/main/Utilities/UseCaseDiagram.jpg)
