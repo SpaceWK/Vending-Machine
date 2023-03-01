@@ -29,7 +29,7 @@ namespace RemoteLearning.VendingMachine.UseCases
         public void Execute()
         {
             List<Product> productsList = new List<Product>();
-            foreach (Product product in products.GetAllProducts())
+            foreach (Product product in products.GetAll())
             {
                 if (product.Quantity > 0)
                 {

@@ -27,19 +27,19 @@ namespace RemoteLearning.VendingMachine.DataAccess
             }
         };
 
-        public void CreateProduct(Product product)
+        public void Create(Product product)
         {
             throw new System.NotImplementedException();
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<Product> GetAll()
         {
             return Products;
         }
 
         public Product GetByColumnId(int columnId)
         {
-            foreach (Product product in GetAllProducts())
+            foreach (Product product in GetAll())
             {
                 if (columnId == product.ColumnId)
                 {
@@ -49,12 +49,12 @@ namespace RemoteLearning.VendingMachine.DataAccess
             return null;
         }
 
-        public void UpdateProduct(Product product)
+        public void Update(Product product)
         {
             throw new System.NotImplementedException();
         }
 
-        public void DeleteProduct(Product product)
+        public void Delete(Product product)
         {
             throw new System.NotImplementedException();
         }

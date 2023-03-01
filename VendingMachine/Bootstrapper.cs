@@ -28,15 +28,14 @@ namespace RemoteLearning.VendingMachine
             IAuthenticationService authenticationService = new AuthenticationService();
             List<IPaymentAlgorithm> paymentAlgorithms = new() { new CashPayment(cashPaymentTerminal), new CardPayment(cardPaymentTerminal) };
             IPaymentService paymentService = new PaymentService(buyView, paymentAlgorithms);
-            IProductRepository memoryProducts = new ProductRepository();
-            IProductRepository liteDbProducts = new LiteDBPRoductRepository(@"D:\Nagarro\Temp\MyData.db");
+            IProductRepository productRepository = new LiteDBProductRepository(@"D:\Nagarro\Temp\MyData.db");
 
             List<IUseCase> useCases = new List<IUseCase>
             {
                 new LoginUseCase(authenticationService, loginView),
                 new LogoutUseCase(authenticationService),
-                new LookUseCase(authenticationService, liteDbProducts, shelfView),
-                new BuyUseCase(authenticationService, liteDbProducts, buyView, paymentService),
+                new LookUseCase(authenticationService, productRepository, shelfView),
+                new BuyUseCase(authenticationService, productRepository, buyView, paymentService),
             };
 
             return new VendingMachineApplication(useCases, mainView);

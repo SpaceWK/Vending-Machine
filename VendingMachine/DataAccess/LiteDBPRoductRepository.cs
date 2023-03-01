@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace RemoteLearning.VendingMachine.DataAccess
 {
-    internal class LiteDBPRoductRepository : IProductRepository
+    internal class LiteDBProductRepository : IProductRepository
     {
         private readonly ILiteCollection<Product> collection;
 
@@ -30,28 +30,18 @@ namespace RemoteLearning.VendingMachine.DataAccess
             }
         };
 
-        public LiteDBPRoductRepository(string connectionString)
+        public LiteDBProductRepository(string connectionString)
         {
             var database = new LiteDatabase(connectionString);
             collection = database.GetCollection<Product>();
-
-            foreach (var product in Products)
-            {
-                var existingProduct = collection.FindById(product.ColumnId);
-
-                if (existingProduct == null)
-                {
-                    collection.Insert(product);
-                }
-            }
         }
 
-        public void CreateProduct(Product product)
+        public void Create(Product product)
         {
             collection.Insert(product);
         }
 
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<Product> GetAll()
         {
             return collection.FindAll();
         }
@@ -61,12 +51,12 @@ namespace RemoteLearning.VendingMachine.DataAccess
             return collection.Find(product => product.ColumnId == columnId).FirstOrDefault();
         }
 
-        public void UpdateProduct(Product product)
+        public void Update(Product product)
         {
             collection.Update(product);
         }
 
-        public void DeleteProduct(Product product)
+        public void Delete(Product product)
         {
             collection.Delete(product.ColumnId);
         }
