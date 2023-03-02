@@ -1,0 +1,12 @@
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\bin\Debug\net6.0\VendingMachine.Business.deps.json
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\bin\Debug\net6.0\VendingMachine.Business.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\bin\Debug\net6.0\VendingMachine.Business.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.csproj.AssemblyReference.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.AssemblyInfoInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.AssemblyInfo.cs
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.csproj.CoreCompileInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\refint\VendingMachine.Business.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\VendingMachine.Business.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Business\obj\Debug\net6.0\ref\VendingMachine.Business.dll

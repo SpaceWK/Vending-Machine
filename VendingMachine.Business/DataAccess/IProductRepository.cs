@@ -1,5 +1,4 @@
 ﻿using RemoteLearning.VendingMachine.Models;
-using System.Collections.Generic;
 
 namespace RemoteLearning.VendingMachine.DataAccess
 {

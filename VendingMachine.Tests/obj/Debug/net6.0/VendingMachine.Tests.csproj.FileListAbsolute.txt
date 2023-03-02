@@ -4,3 +4,9 @@ D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine.Tests\
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.AssemblyInfoInputs.cache
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.AssemblyInfo.cs
 D:\Nagarro\Remote_Learning\Vending Machine\Vending Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.csproj.CoreCompileInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\bin\Debug\net6.0\CoverletSourceRootsMapping
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.csproj.AssemblyReference.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.AssemblyInfoInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.AssemblyInfo.cs
+D:\GitHub_Projects\Vending-Machine\VendingMachine.Tests\obj\Debug\net6.0\VendingMachine.Tests.csproj.CoreCompileInputs.cache

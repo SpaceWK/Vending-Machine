@@ -14,19 +14,6 @@
             "related": ".xml"
           }
         }
-      },
-      "VendingMachine.Business/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "LiteDB": "5.0.15"
-        },
-        "compile": {
-          "bin/placeholder/VendingMachine.Business.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/VendingMachine.Business.dll": {}
-        }
       }
     }
   },
@@ -50,17 +37,11 @@
         "litedb.5.0.15.nupkg.sha512",
         "litedb.nuspec"
       ]
-    },
-    "VendingMachine.Business/1.0.0": {
-      "type": "project",
-      "path": "../VendingMachine.Business/VendingMachine.Business.csproj",
-      "msbuildProject": "../VendingMachine.Business/VendingMachine.Business.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "LiteDB >= 5.0.15",
-      "VendingMachine.Business >= 1.0.0"
+      "LiteDB >= 5.0.15"
     ]
   },
   "packageFolders": {
@@ -69,11 +50,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj",
-      "projectName": "RemoteLearning.VendingMachine",
-      "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\VendingMachine.csproj",
+      "projectUniqueName": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj",
+      "projectName": "VendingMachine.Business",
+      "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj",
       "packagesPath": "C:\\Users\\Alex\\.nuget\\packages\\",
-      "outputPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine\\obj\\",
+      "outputPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Alex\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,11 +70,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj": {
-              "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

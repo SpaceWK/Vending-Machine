@@ -1,7 +1,5 @@
 ﻿using LiteDB;
 using RemoteLearning.VendingMachine.Models;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace RemoteLearning.VendingMachine.DataAccess
 {
