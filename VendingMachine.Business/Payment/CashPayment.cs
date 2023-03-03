@@ -1,12 +1,11 @@
-﻿using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using System;
+﻿using VendingMachine.Business.Exceptions;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.Payment
+namespace VendingMachine.Business.Payment
 {
     internal class CashPayment : IPaymentAlgorithm
     {
-        ICashPaymentTerminal cashTerminal = new CashPaymentTerminal();
+        private readonly ICashPaymentTerminal cashTerminal;
 
         public string Name => "cash";
 
@@ -28,7 +27,7 @@ namespace RemoteLearning.VendingMachine.Payment
                     cashTerminal.GiveBackMoney(totalMoneyInserted);
                     throw new CancelException();
                 }
-                
+
                 float insertedMoney = float.Parse(input);
                 totalMoneyInserted += insertedMoney;
             }

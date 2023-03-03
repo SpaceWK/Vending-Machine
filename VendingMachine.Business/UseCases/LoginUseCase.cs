@@ -1,8 +1,7 @@
-﻿using System;
-using RemoteLearning.VendingMachine.Authentication;
-using RemoteLearning.VendingMachine.PresentationLayer;
+﻿using VendingMachine.Business.Authentication;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.UseCases
+namespace VendingMachine.Business.UseCases
 {
     internal class LoginUseCase : IUseCase
     {

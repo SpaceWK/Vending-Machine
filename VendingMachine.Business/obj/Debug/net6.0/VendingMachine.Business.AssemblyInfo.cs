@@ -11,6 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("RemoteLearning.VendingMachine")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("VendingMachine.Tests")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("VendingMachine.Presentation")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("VendingMachine.DataAccess")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleToAttribute("DynamicProxyGenAssembly2")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("VendingMachine.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

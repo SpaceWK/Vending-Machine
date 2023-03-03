@@ -1,9 +1,9 @@
 ﻿using Moq;
-using RemoteLearning.VendingMachine.Authentication;
-using RemoteLearning.VendingMachine.DataAccess;
-using RemoteLearning.VendingMachine.Models;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using RemoteLearning.VendingMachine.UseCases;
+using VendingMachine.Business.Authentication;
+using VendingMachine.Business.DataAccess;
+using VendingMachine.Business.Models;
+using VendingMachine.Business.PresentationLayer;
+using VendingMachine.Business.UseCases;
 using Xunit;
 
 namespace VendingMachine.Tests.UseCases.LookUseCaseTests
@@ -29,7 +29,7 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
         public void HavingALookUseCase_WhenExecuted_ThenAllProductsAreRetrievedFromRepository()
         {
             productRepository
-                .Setup(x => x.GetAllProducts())
+                .Setup(x => x.GetAll())
                 .Returns(new List<Product>() {
                     new Product {
                         ColumnId = 1,
@@ -41,7 +41,7 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
 
             lookUseCase.Execute();
 
-            productRepository.Verify(x => x.GetAllProducts(), Times.Once);
+            productRepository.Verify(x => x.GetAll(), Times.Once);
         }
 
         [Fact]
@@ -52,7 +52,7 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
             List<Product> expectedProductsList = new List<Product>();
 
             productRepository
-                .Setup(x => x.GetAllProducts())
+                .Setup(x => x.GetAll())
                 .Returns(productsList);
 
             lookUseCase.Execute();
@@ -68,7 +68,7 @@ namespace VendingMachine.Tests.UseCases.LookUseCaseTests
             List<Product> expectedProductsList = new List<Product>() { product };
 
             productRepository
-                .Setup(x => x.GetAllProducts())
+                .Setup(x => x.GetAll())
                 .Returns(productsList);
 
             lookUseCase.Execute();

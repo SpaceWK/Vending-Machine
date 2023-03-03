@@ -1,4 +1,4 @@
-﻿namespace RemoteLearning.VendingMachine.Models
+﻿namespace VendingMachine.Business.Models
 {
     internal class PaymentMethod
     {

@@ -1,4 +1,4 @@
-﻿namespace RemoteLearning.VendingMachine.PresentationLayer
+﻿namespace VendingMachine.Business.PresentationLayer
 {
     internal interface ILoginView
     {

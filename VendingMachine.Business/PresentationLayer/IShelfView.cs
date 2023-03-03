@@ -1,15 +1,9 @@
-﻿using RemoteLearning.VendingMachine.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using VendingMachine.Business.Models;
 
-namespace RemoteLearning.VendingMachine.PresentationLayer
+namespace VendingMachine.Business.PresentationLayer
 {
     internal interface IShelfView
     {
         void DisplayProducts(IEnumerable<Product> products);
-
     }
 }

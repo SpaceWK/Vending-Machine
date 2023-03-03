@@ -1,7 +1,6 @@
-﻿using RemoteLearning.VendingMachine.Models;
-using System.Collections.Generic;
+﻿using VendingMachine.Business.Models;
 
-namespace RemoteLearning.VendingMachine.PresentationLayer
+namespace VendingMachine.Business.PresentationLayer
 {
     internal interface IBuyView
     {

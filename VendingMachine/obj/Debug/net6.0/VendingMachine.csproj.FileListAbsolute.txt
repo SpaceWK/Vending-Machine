@@ -22,7 +22,11 @@ D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearnin
 D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\RemoteLearning.VendingMachine.pdb
 D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\LiteDB.dll
 D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.Business.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.DataAccess.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.Presentation.dll
 D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.Business.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.DataAccess.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine\bin\Debug\net6.0\VendingMachine.Presentation.pdb
 D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.csproj.AssemblyReference.cache
 D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.GeneratedMSBuildEditorConfig.editorconfig
 D:\GitHub_Projects\Vending-Machine\VendingMachine\obj\Debug\net6.0\VendingMachine.AssemblyInfoInputs.cache

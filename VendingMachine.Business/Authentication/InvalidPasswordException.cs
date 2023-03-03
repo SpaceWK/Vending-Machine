@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RemoteLearning.VendingMachine.Authentication
+﻿namespace VendingMachine.Business.Authentication
 {
     internal class InvalidPasswordException : Exception
     {

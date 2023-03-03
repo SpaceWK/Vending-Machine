@@ -1,0 +1,15 @@
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\bin\Debug\net6.0\VendingMachine.DataAccess.deps.json
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\bin\Debug\net6.0\VendingMachine.DataAccess.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\bin\Debug\net6.0\VendingMachine.DataAccess.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\bin\Debug\net6.0\VendingMachine.Business.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\bin\Debug\net6.0\VendingMachine.Business.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.csproj.AssemblyReference.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.AssemblyInfoInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.AssemblyInfo.cs
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.csproj.CoreCompileInputs.cache
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.csproj.CopyComplete
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\refint\VendingMachine.DataAccess.dll
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\VendingMachine.DataAccess.pdb
+D:\GitHub_Projects\Vending-Machine\VendingMachine.DataAccess\obj\Debug\net6.0\ref\VendingMachine.DataAccess.dll

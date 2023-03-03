@@ -8,14 +8,17 @@
     ".NETCoreApp,Version=v6.0": {
       "VendingMachine.Tests/1.0.0": {
         "dependencies": {
+          "LiteDB": "5.0.15",
           "MSTest.TestAdapter": "2.2.8",
           "MSTest.TestFramework": "2.2.8",
           "Microsoft.NET.Test.Sdk": "17.1.0",
           "Moq": "4.18.4",
           "RemoteLearning.VendingMachine": "1.0.0",
+          "VendingMachine.Business": "1.0.0",
           "coverlet.collector": "3.1.2",
           "xunit": "2.4.2",
-          "xunit.runner.visualstudio": "2.4.5"
+          "xunit.runner.visualstudio": "2.4.5",
+          "RemoteLearning.VendingMachine.Reference": "1.0.0.0"
         },
         "runtime": {
           "VendingMachine.Tests.dll": {}
@@ -33,6 +36,14 @@
         }
       },
       "coverlet.collector/3.1.2": {},
+      "LiteDB/5.0.15": {
+        "runtime": {
+          "lib/netstandard2.0/LiteDB.dll": {
+            "assemblyVersion": "5.0.15.0",
+            "fileVersion": "5.0.15.0"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/17.1.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -1183,8 +1194,46 @@
       },
       "xunit.runner.visualstudio/2.4.5": {},
       "RemoteLearning.VendingMachine/1.0.0": {
+        "dependencies": {
+          "LiteDB": "5.0.15",
+          "VendingMachine.Business": "1.0.0",
+          "VendingMachine.DataAccess": "1.0.0",
+          "VendingMachine.Presentation": "1.0.0"
+        },
         "runtime": {
           "RemoteLearning.VendingMachine.dll": {}
+        }
+      },
+      "VendingMachine.Business/1.0.0": {
+        "dependencies": {
+          "LiteDB": "5.0.15"
+        },
+        "runtime": {
+          "VendingMachine.Business.dll": {}
+        }
+      },
+      "VendingMachine.DataAccess/1.0.0": {
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "runtime": {
+          "VendingMachine.DataAccess.dll": {}
+        }
+      },
+      "VendingMachine.Presentation/1.0.0": {
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "runtime": {
+          "VendingMachine.Presentation.dll": {}
+        }
+      },
+      "RemoteLearning.VendingMachine.Reference/1.0.0.0": {
+        "runtime": {
+          "RemoteLearning.VendingMachine.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }
@@ -1208,6 +1257,13 @@
       "sha512": "sha512-wuLDIDKD5XMt0A7lE31JPenT7QQwZPFkP5rRpdJeblyXZ9MGLI8rYjvm5fvAKln+2/X+4IxxQDxBtwdrqKNLZw==",
       "path": "coverlet.collector/3.1.2",
       "hashPath": "coverlet.collector.3.1.2.nupkg.sha512"
+    },
+    "LiteDB/5.0.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nucyfCOGSATH553BxplxExP3BOqEwmHt0B57426EIaQjD3CC1Odb52VVCGgTxyYaD2oe3B/cJk8jDo6XiBJqPg==",
+      "path": "litedb/5.0.15",
+      "hashPath": "litedb.5.0.15.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/17.1.0": {
       "type": "package",
@@ -1890,6 +1946,26 @@
     },
     "RemoteLearning.VendingMachine/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VendingMachine.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VendingMachine.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VendingMachine.Presentation/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "RemoteLearning.VendingMachine.Reference/1.0.0.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

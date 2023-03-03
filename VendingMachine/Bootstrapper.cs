@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Net.Http.Headers;
-using RemoteLearning.VendingMachine.Authentication;
+﻿using VendingMachine.Business.Authentication;
 using RemoteLearning.VendingMachine.DataAccess;
-using RemoteLearning.VendingMachine.Payment;
+using VendingMachine.Business.Payment;
 using RemoteLearning.VendingMachine.PresentationLayer;
-using RemoteLearning.VendingMachine.UseCases;
+using VendingMachine.Business.UseCases;
+using System.Collections.Generic;
+using VendingMachine.Business.PresentationLayer;
+using VendingMachine.Business.DataAccess;
+using VendingMachine.Business;
 
 namespace RemoteLearning.VendingMachine
 {
@@ -18,7 +20,7 @@ namespace RemoteLearning.VendingMachine
 
         private static VendingMachineApplication BuildApplication()
         {
-            MainView mainView = new MainView();
+            IMainView mainView = new MainView();
             ILoginView loginView = new LoginView();
             IShelfView shelfView = new ShelfView();
             IBuyView buyView = new BuyView();

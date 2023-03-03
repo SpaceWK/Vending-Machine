@@ -1,4 +1,4 @@
-﻿namespace RemoteLearning.VendingMachine.Payment
+﻿namespace VendingMachine.Business.Payment
 {
     internal interface IPaymentService
     {

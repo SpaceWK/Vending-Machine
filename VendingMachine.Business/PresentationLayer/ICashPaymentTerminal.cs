@@ -1,8 +1,8 @@
-﻿namespace RemoteLearning.VendingMachine.PresentationLayer
+﻿namespace VendingMachine.Business.PresentationLayer
 {
     internal interface ICashPaymentTerminal
     {
         string AskForMoney();
-        void GiveBackMoney(float price);
+        void GiveBackMoney(float money);
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RemoteLearning.VendingMachine.Exceptions
+﻿namespace VendingMachine.Business.Exceptions
 {
     internal class InsertAValidCardException : Exception
     {

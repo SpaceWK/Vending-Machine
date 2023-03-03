@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using RemoteLearning.VendingMachine.Authentication;
-using RemoteLearning.VendingMachine.DataAccess;
-using RemoteLearning.VendingMachine.Models;
-using RemoteLearning.VendingMachine.PresentationLayer;
+﻿using VendingMachine.Business;
+using VendingMachine.Business.Authentication;
+using VendingMachine.Business.DataAccess;
+using VendingMachine.Business.Models;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.UseCases
+namespace VendingMachine.Business.UseCases
 {
     internal class LookUseCase : IUseCase
     {

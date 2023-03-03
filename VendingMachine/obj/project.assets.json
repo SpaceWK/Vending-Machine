@@ -27,6 +27,32 @@
         "runtime": {
           "bin/placeholder/VendingMachine.Business.dll": {}
         }
+      },
+      "VendingMachine.DataAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VendingMachine.DataAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VendingMachine.DataAccess.dll": {}
+        }
+      },
+      "VendingMachine.Presentation/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VendingMachine.Presentation.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VendingMachine.Presentation.dll": {}
+        }
       }
     }
   },
@@ -55,12 +81,24 @@
       "type": "project",
       "path": "../VendingMachine.Business/VendingMachine.Business.csproj",
       "msbuildProject": "../VendingMachine.Business/VendingMachine.Business.csproj"
+    },
+    "VendingMachine.DataAccess/1.0.0": {
+      "type": "project",
+      "path": "../VendingMachine.DataAccess/VendingMachine.DataAccess.csproj",
+      "msbuildProject": "../VendingMachine.DataAccess/VendingMachine.DataAccess.csproj"
+    },
+    "VendingMachine.Presentation/1.0.0": {
+      "type": "project",
+      "path": "../VendingMachine.Presentation/VendingMachine.Presentation.csproj",
+      "msbuildProject": "../VendingMachine.Presentation/VendingMachine.Presentation.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "LiteDB >= 5.0.15",
-      "VendingMachine.Business >= 1.0.0"
+      "VendingMachine.Business >= 1.0.0",
+      "VendingMachine.DataAccess >= 1.0.0",
+      "VendingMachine.Presentation >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -92,6 +130,12 @@
           "projectReferences": {
             "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj": {
               "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Business\\VendingMachine.Business.csproj"
+            },
+            "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.DataAccess\\VendingMachine.DataAccess.csproj": {
+              "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.DataAccess\\VendingMachine.DataAccess.csproj"
+            },
+            "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Presentation\\VendingMachine.Presentation.csproj": {
+              "projectPath": "D:\\GitHub_Projects\\Vending-Machine\\VendingMachine.Presentation\\VendingMachine.Presentation.csproj"
             }
           }
         }

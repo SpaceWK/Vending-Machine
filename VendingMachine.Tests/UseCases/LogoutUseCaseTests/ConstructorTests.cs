@@ -1,6 +1,6 @@
 ﻿using Moq;
-using RemoteLearning.VendingMachine.Authentication;
-using RemoteLearning.VendingMachine.UseCases;
+using VendingMachine.Business.Authentication;
+using VendingMachine.Business.UseCases;
 using Xunit;
 
 namespace VendingMachine.Tests.UseCases.LogoutUseCaseTests

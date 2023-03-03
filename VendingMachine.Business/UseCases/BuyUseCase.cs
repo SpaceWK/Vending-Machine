@@ -1,12 +1,11 @@
-﻿using RemoteLearning.VendingMachine.Authentication;
-using RemoteLearning.VendingMachine.DataAccess;
-using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.Models;
-using RemoteLearning.VendingMachine.Payment;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using System;
+﻿using VendingMachine.Business.Authentication;
+using VendingMachine.Business.DataAccess;
+using VendingMachine.Business.Exceptions;
+using VendingMachine.Business.Models;
+using VendingMachine.Business.Payment;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.UseCases
+namespace VendingMachine.Business.UseCases
 {
     internal class BuyUseCase : IUseCase
     {

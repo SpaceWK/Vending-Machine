@@ -1,4 +1,4 @@
-﻿namespace RemoteLearning.VendingMachine
+﻿namespace VendingMachine.Business
 {
     internal interface IUseCase
     {

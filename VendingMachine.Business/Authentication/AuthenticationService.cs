@@ -1,4 +1,4 @@
-﻿namespace RemoteLearning.VendingMachine.Authentication
+﻿namespace VendingMachine.Business.Authentication
 {
     internal class AuthenticationService : IAuthenticationService
     {

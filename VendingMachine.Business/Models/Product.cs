@@ -1,6 +1,6 @@
 ﻿using LiteDB;
 
-namespace RemoteLearning.VendingMachine.Models
+namespace VendingMachine.Business.Models
 {
     internal class Product
     {

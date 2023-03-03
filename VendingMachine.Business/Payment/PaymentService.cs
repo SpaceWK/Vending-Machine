@@ -1,11 +1,8 @@
-﻿using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.Models;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using VendingMachine.Business.Exceptions;
+using VendingMachine.Business.Models;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.Payment
+namespace VendingMachine.Business.Payment
 {
     internal class PaymentService : IPaymentService
     {
@@ -17,17 +14,7 @@ namespace RemoteLearning.VendingMachine.Payment
         {
             this.buyView = buyView ?? throw new ArgumentNullException(nameof(buyView));
             this.paymentAlgorithms = paymentAlgorithms ?? throw new ArgumentNullException(nameof(paymentAlgorithms));
-
-            paymentMethods = new List<PaymentMethod>() {
-                new PaymentMethod {
-                    Id = 1,
-                    Name = "cash"
-                },
-                new PaymentMethod {
-                    Id = 2,
-                    Name = "card"
-                }
-            };
+            paymentMethods = InitializePaymentList(paymentAlgorithms);
         }
 
         public void Execute(float price)
@@ -55,6 +42,23 @@ namespace RemoteLearning.VendingMachine.Payment
             var paymentAlgorithm = paymentAlgorithms.FirstOrDefault(x => x.Name == selectedMethod.Name);
 
             return paymentAlgorithm;
+        }
+
+        private List<PaymentMethod> InitializePaymentList(List<IPaymentAlgorithm> paymentAlgorithms)
+        {
+            if(paymentAlgorithms.Count == 0)
+            {
+                throw new CancelException("Payment Algorithm list is empty.");
+            }
+
+            var paymentMethods = new List<PaymentMethod>();
+
+            for (int i = 0; i < paymentAlgorithms.Count; i++)
+            {
+                paymentMethods.Add(new PaymentMethod() { Id = i + 0 , Name = paymentAlgorithms[i].Name }); 
+            }
+
+            return paymentMethods;
         }
     }
 }

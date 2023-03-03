@@ -1,6 +1,6 @@
-﻿using RemoteLearning.VendingMachine.Models;
+﻿using VendingMachine.Business.Models;
 
-namespace RemoteLearning.VendingMachine.DataAccess
+namespace VendingMachine.Business.DataAccess
 {
     internal interface IProductRepository
     {

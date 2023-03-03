@@ -1,12 +1,11 @@
-﻿using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.PresentationLayer;
-using System;
+﻿using VendingMachine.Business.Exceptions;
+using VendingMachine.Business.PresentationLayer;
 
-namespace RemoteLearning.VendingMachine.Payment
+namespace VendingMachine.Business.Payment
 {
     internal class CardPayment : IPaymentAlgorithm
     {
-        ICardPaymentTerminal cardTerminal = new CardPaymentTerminal();
+        private readonly ICardPaymentTerminal cardTerminal;
 
         public string Name => "card";
 

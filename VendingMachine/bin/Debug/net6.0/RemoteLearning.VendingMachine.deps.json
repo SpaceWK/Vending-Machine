@@ -9,7 +9,9 @@
       "RemoteLearning.VendingMachine/1.0.0": {
         "dependencies": {
           "LiteDB": "5.0.15",
-          "VendingMachine.Business": "1.0.0"
+          "VendingMachine.Business": "1.0.0",
+          "VendingMachine.DataAccess": "1.0.0",
+          "VendingMachine.Presentation": "1.0.0"
         },
         "runtime": {
           "RemoteLearning.VendingMachine.dll": {}
@@ -30,6 +32,22 @@
         "runtime": {
           "VendingMachine.Business.dll": {}
         }
+      },
+      "VendingMachine.DataAccess/1.0.0": {
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "runtime": {
+          "VendingMachine.DataAccess.dll": {}
+        }
+      },
+      "VendingMachine.Presentation/1.0.0": {
+        "dependencies": {
+          "VendingMachine.Business": "1.0.0"
+        },
+        "runtime": {
+          "VendingMachine.Presentation.dll": {}
+        }
       }
     }
   },
@@ -47,6 +65,16 @@
       "hashPath": "litedb.5.0.15.nupkg.sha512"
     },
     "VendingMachine.Business/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VendingMachine.DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VendingMachine.Presentation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

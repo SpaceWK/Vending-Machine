@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RemoteLearning.VendingMachine.Exceptions
+﻿namespace VendingMachine.Business.Exceptions
 {
     internal class InsufficientStockException : Exception
     {

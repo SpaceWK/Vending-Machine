@@ -1,16 +1,17 @@
-﻿using RemoteLearning.VendingMachine.Exceptions;
-using RemoteLearning.VendingMachine.PresentationLayer;
+﻿using VendingMachine.Business.Exceptions;
+using VendingMachine.Business.PresentationLayer;
 using System;
 using System.Collections.Generic;
+using VendingMachine.Business;
 
 namespace RemoteLearning.VendingMachine
 {
     internal class VendingMachineApplication
     {
         private readonly List<IUseCase> useCases;
-        private readonly MainView mainView;
+        private readonly IMainView mainView;
 
-        public VendingMachineApplication(List<IUseCase> useCases, MainView mainView)
+        public VendingMachineApplication(List<IUseCase> useCases, IMainView mainView)
         {
             this.useCases = useCases ?? throw new ArgumentNullException(nameof(useCases));
             this.mainView = mainView ?? throw new ArgumentNullException(nameof(mainView));

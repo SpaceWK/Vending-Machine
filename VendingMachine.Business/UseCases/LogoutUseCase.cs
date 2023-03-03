@@ -1,7 +1,6 @@
-﻿using System;
-using RemoteLearning.VendingMachine.Authentication;
+﻿using VendingMachine.Business.Authentication;
 
-namespace RemoteLearning.VendingMachine.UseCases
+namespace VendingMachine.Business.UseCases
 {
     internal class LogoutUseCase : IUseCase
     {

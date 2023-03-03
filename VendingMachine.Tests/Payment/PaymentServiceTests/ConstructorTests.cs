@@ -1,7 +1,7 @@
 ﻿using Moq;
-using RemoteLearning.VendingMachine.Models;
-using RemoteLearning.VendingMachine.Payment;
-using RemoteLearning.VendingMachine.PresentationLayer;
+using VendingMachine.Business.Models;
+using VendingMachine.Business.Payment;
+using VendingMachine.Business.PresentationLayer;
 using Xunit;
 
 namespace VendingMachine.Tests.Payment.PaymentServiceTests
